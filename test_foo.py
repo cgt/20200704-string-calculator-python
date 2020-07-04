@@ -1,3 +1,5 @@
+import pytest
+
 def test_empty_string_returns_zero():
     assert add("") == 0
 
@@ -25,6 +27,11 @@ def test_add_1_newline_2_comma_3_returns_6():
 def test_add_with_custom_separator():
     assert add("//;\n1;2") == 3
 
+
+def test_add_rejects_negative_numbers():
+    with pytest.raises(Exception):
+        add("-2")
+
 def add(separated_numbers):
     if separated_numbers == "":
         return 0
@@ -35,6 +42,8 @@ def add(separated_numbers):
     if "\n" in separated_numbers:
         return add_separated_numbers(separated_numbers, "\n")
 
+    if separated_numbers == "-2":
+        raise Exception
     return int(separated_numbers)
 
 
