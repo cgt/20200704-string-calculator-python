@@ -22,9 +22,18 @@ def test_add_1_and_2_and_3_and_4_returns_10():
 def test_add_1_newline_2_comma_3_returns_6():
     assert add("1\n2,3") == 6
 
+def test_add_with_custom_separator():
+    assert add("//;\n1;2") == 3
+
 def add(separated_numbers):
     if separated_numbers == "":
         return 0
+    if separated_numbers.startswith("//"):
+        temp = separated_numbers.split("\n", 1)
+        separated_numbers = temp[1]
+        separator = temp[0][2]
+        separated_numbers = separated_numbers.replace(separator, ",")
+
     if "," in separated_numbers:
         return add_separated_numbers(separated_numbers, ",")
 
