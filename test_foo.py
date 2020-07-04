@@ -10,4 +10,3 @@ def add(numbers):
 
     if numbers == "4":
         return 4
-    return 0
