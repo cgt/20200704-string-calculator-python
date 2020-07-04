@@ -54,8 +54,6 @@ def add(separated_numbers):
     if len(invalid_inputs) > 0:
         raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
     for n in numbers:
-        if n < 0:
-            invalid_inputs.append(str(n))
         result += n
     return result
 
