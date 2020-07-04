@@ -37,8 +37,8 @@ def add(separated_numbers):
     return int(separated_numbers)
 
 
-def apple_sauce(separated_numbers):
-    numbers = separated_numbers.split("\n")
+def apple_sauce(newline_separated_numbers):
+    numbers = newline_separated_numbers.split("\n")
     result = 0
     for n in numbers:
         result += add(n)
