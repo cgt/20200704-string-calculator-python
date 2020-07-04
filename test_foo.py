@@ -13,11 +13,11 @@ def test_add_1_and_2_returns_3():
 def test_add_3_and_5_returns_8():
     assert add("3,5") == 8
 
-def add(numbers):
-    if numbers == "":
+def add(comma_separated_numbers):
+    if comma_separated_numbers == "":
         return 0
-    if "," in numbers:
-        x = numbers.split(",")
+    if "," in comma_separated_numbers:
+        x = comma_separated_numbers.split(",")
         return add(x[0]) + add(x[1])
 
-    return int(numbers)
+    return int(comma_separated_numbers)
