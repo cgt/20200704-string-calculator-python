@@ -31,6 +31,8 @@ def test_add_with_custom_separator():
 def test_add_rejects_negative_numbers():
     with pytest.raises(Exception):
         add("-2")
+    with pytest.raises(Exception):
+        add("-7")
 
 def add(separated_numbers):
     if separated_numbers == "":
@@ -43,7 +45,7 @@ def add(separated_numbers):
         return add_separated_numbers(separated_numbers, "\n")
 
     n = int(separated_numbers)
-    if n == -2:
+    if n < 0:
         raise Exception
     return n
 
