@@ -35,6 +35,9 @@ def test_add_rejects_negative_numbers():
     with pytest.raises(Exception) as ex:
         add("6,-7")
     assert "error: negatives not allowed: -7" in str(ex.value)
+    with pytest.raises(Exception) as ex:
+        add("1,-2,-3")
+    assert "error: negatives not allowed: -2 -3" in str(ex.value)
 
 
 def add(separated_numbers):
@@ -63,9 +66,12 @@ def normalize_separator(separated_numbers, separator):
 def add_separated_numbers(separated_numbers, separator):
     numbers = separated_numbers.split(separator)
     result = 0
+    negative_numbers = []
     for n in numbers:
         m = int(n)
         if m < 0:
-            raise Exception("error: negatives not allowed: {}".format(m))
+            negative_numbers.append(n)
         result += m
+    if len(negative_numbers) > 0:
+        raise Exception("error: negatives not allowed: {}".format(" ".join(negative_numbers)))
     return result
