@@ -44,8 +44,7 @@ def add(separated_numbers):
         separated_numbers = normalize_custom_separator(separated_numbers)
     separated_numbers = normalize_separator(separated_numbers, ",")
 
-    if True:
-        return add_separated_numbers(separated_numbers, "\n")
+    return add_separated_numbers(separated_numbers, "\n")
 
 
 def normalize_custom_separator(separated_numbers):
