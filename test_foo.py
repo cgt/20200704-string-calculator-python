@@ -49,10 +49,14 @@ def add(separated_numbers):
 
     numbers = separated_numbers.split("\n")
     numbers = [int(x) for x in numbers]
+    validate_input(numbers)
+    return sum(numbers)
+
+
+def validate_input(numbers):
     invalid_inputs = [str(x) for x in numbers if x < 0]
     if len(invalid_inputs) > 0:
         raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
-    return sum(numbers)
 
 
 def normalize_custom_separator(separated_numbers):
