@@ -29,7 +29,7 @@ def add(separated_numbers):
         return apple_sauce(separated_numbers, ",")
 
     elif "\n" in separated_numbers:
-        return apple_sauce(separated_numbers)
+        return apple_sauce(separated_numbers, "\n")
 
     return int(separated_numbers)
 
