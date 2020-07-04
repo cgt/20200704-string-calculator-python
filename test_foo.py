@@ -22,9 +22,6 @@ def test_add_1_and_2_and_3_and_4_returns_10():
 def test_add_1_newline_2_comma_3_returns_6():
     assert add("1\n2,3") == 6
 
-def test_add_1_comma_2_newline_3_returns_6():
-    assert add("1,2\n3") == 6
-
 def add(separated_numbers):
     if separated_numbers == "":
         return 0
