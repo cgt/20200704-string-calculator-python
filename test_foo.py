@@ -31,7 +31,8 @@ def add(separated_numbers):
     if separated_numbers.startswith("//"):
         temp = separated_numbers.split("\n", 1)
         separated_numbers = temp[1]
-        separator = temp[0][2]
+        prefix = temp[0]
+        separator = prefix[2]
         separated_numbers = separated_numbers.replace(separator, ",")
 
     if "," in separated_numbers:
