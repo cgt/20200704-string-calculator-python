@@ -22,20 +22,20 @@ def test_add_1_and_2_and_3_and_4_returns_10():
 def test_add_1_newline_2_comma_3_returns_6():
     assert add("1\n2,3") == 6
 
-def add(comma_separated_numbers):
-    if comma_separated_numbers == "":
+def add(separated_numbers):
+    if separated_numbers == "":
         return 0
-    if "," in comma_separated_numbers:
-        numbers = comma_separated_numbers.split(",")
+    if "," in separated_numbers:
+        numbers = separated_numbers.split(",")
         result = 0
         for n in numbers:
             result += add(n)
         return result
-    elif "\n" in comma_separated_numbers:
-        numbers = comma_separated_numbers.split("\n")
+    elif "\n" in separated_numbers:
+        numbers = separated_numbers.split("\n")
         result = 0
         for n in numbers:
             result += add(n)
         return result
 
-    return int(comma_separated_numbers)
+    return int(separated_numbers)
