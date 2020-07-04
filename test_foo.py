@@ -54,6 +54,10 @@ def add(separated_numbers):
 
 
 def validate_input(numbers):
+    raise_if_contains_negative_numbers(numbers)
+
+
+def raise_if_contains_negative_numbers(numbers):
     invalid_inputs = [str(x) for x in numbers if x < 0]
     if len(invalid_inputs) > 0:
         raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
