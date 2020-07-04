@@ -25,6 +25,11 @@ def add(comma_separated_numbers):
             result = add(numbers[0]) + add(numbers[1])
             if len(numbers) > 2:
                 result += add(numbers[2])
+        else:
+            result = add(numbers[0]) + add(numbers[1])
+            if len(numbers) > 2:
+                result += add(numbers[2])
+
         return result
 
     return int(comma_separated_numbers)
