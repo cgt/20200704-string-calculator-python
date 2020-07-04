@@ -30,6 +30,7 @@ def add(separated_numbers):
         return 0
     if separated_numbers.startswith("//"):
         separated_numbers = normalize_custom_separator(separated_numbers)
+    separated_numbers = normalize_separator(separated_numbers, ",")
 
     if "," in separated_numbers:
         return add_separated_numbers(separated_numbers, ",")
