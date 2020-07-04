@@ -45,6 +45,8 @@ def add(separated_numbers):
     if separated_numbers == "-2":
         raise Exception
     n = int(separated_numbers)
+    if n == -2:
+        raise Exception
     return n
 
 
