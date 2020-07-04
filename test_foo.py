@@ -47,7 +47,17 @@ def add(separated_numbers):
         separated_numbers = normalize_custom_separator(separated_numbers)
     separated_numbers = normalize_separator(separated_numbers, ",")
 
-    return add_separated_numbers(separated_numbers, "\n")
+    numbers = separated_numbers.split("\n")
+    result = 0
+    invalid_inputs = []
+    for n in numbers:
+        m = int(n)
+        if m < 0:
+            invalid_inputs.append(n)
+        result += m
+    if len(invalid_inputs) > 0:
+        raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
+    return result
 
 
 def normalize_custom_separator(separated_numbers):
@@ -63,15 +73,3 @@ def normalize_separator(separated_numbers, separator):
     return separated_numbers.replace(separator, "\n")
 
 
-def add_separated_numbers(separated_numbers, separator):
-    numbers = separated_numbers.split(separator)
-    result = 0
-    invalid_inputs = []
-    for n in numbers:
-        m = int(n)
-        if m < 0:
-            invalid_inputs.append(n)
-        result += m
-    if len(invalid_inputs) > 0:
-        raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
-    return result
