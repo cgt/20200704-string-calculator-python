@@ -55,7 +55,7 @@ def add(separated_numbers):
         raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
     for n in numbers:
         result += n
-    return result
+    return sum(numbers)
 
 
 def normalize_custom_separator(separated_numbers):
