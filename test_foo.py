@@ -21,7 +21,7 @@ def add(comma_separated_numbers):
         return 0
     if "," in comma_separated_numbers:
         numbers = comma_separated_numbers.split(",")
-        if True:
+        if len(numbers) > 3:
             result = add(numbers[0]) + add(numbers[1])
             if len(numbers) > 2:
                 result += add(numbers[2])
