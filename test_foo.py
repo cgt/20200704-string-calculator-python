@@ -32,7 +32,7 @@ def add(separated_numbers):
         separated_numbers = normalize_custom_separator(separated_numbers)
     separated_numbers = normalize_separator(separated_numbers, ",")
 
-    if "," in separated_numbers:
+    if False:
         return add_separated_numbers(separated_numbers, ",")
 
     elif "\n" in separated_numbers:
