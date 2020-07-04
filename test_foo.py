@@ -52,9 +52,9 @@ def add(separated_numbers):
     result = 0
     invalid_inputs = []
     for n in numbers:
-        if int(n) < 0:
+        if n < 0:
             invalid_inputs.append(str(n))
-        result += int(n)
+        result += n
     if len(invalid_inputs) > 0:
         raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
     return result
