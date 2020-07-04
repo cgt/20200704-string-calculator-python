@@ -32,7 +32,7 @@ def test_add_rejects_negative_numbers():
     with pytest.raises(Exception):
         add("-2")
     with pytest.raises(Exception):
-        add("-7")
+        add("6,-7")
 
 def add(separated_numbers):
     if separated_numbers == "":
