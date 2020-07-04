@@ -43,12 +43,18 @@ def test_add_rejects_negative_numbers():
 def add(separated_numbers):
     if separated_numbers == "":
         return 0
-    separated_numbers = normalize(separated_numbers)
 
-    numbers = separated_numbers.split("\n")
-    numbers = [int(x) for x in numbers]
+    separated_numbers = normalize(separated_numbers)
+    numbers = split_numbers(separated_numbers)
+
     validate_input(numbers)
     return sum(numbers)
+
+
+def split_numbers(separated_numbers):
+    numbers = separated_numbers.split("\n")
+    numbers = [int(x) for x in numbers]
+    return numbers
 
 
 def normalize(separated_numbers):
