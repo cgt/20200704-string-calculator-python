@@ -16,15 +16,18 @@ def test_add_3_and_5_returns_8():
 def test_add_1_and_2_and_3_returns_6():
     assert add("1,2,3") == 6
 
+def test_add_1_and_2_and_3_and_4_returns_10():
+    assert add("1,2,3,4") == 10
+
 def add(comma_separated_numbers):
     if comma_separated_numbers == "":
         return 0
     if "," in comma_separated_numbers:
         numbers = comma_separated_numbers.split(",")
         if len(numbers) > 3:
-            result = add(numbers[0]) + add(numbers[1])
-            if len(numbers) > 2:
-                result += add(numbers[2])
+            result = 0
+            for n in numbers:
+                result += add(n)
         else:
             result = add(numbers[0]) + add(numbers[1])
             if len(numbers) > 2:
