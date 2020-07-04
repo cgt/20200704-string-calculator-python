@@ -35,7 +35,7 @@ def add(separated_numbers):
     if False:
         return add_separated_numbers(separated_numbers, ",")
 
-    elif "\n" in separated_numbers:
+    if "\n" in separated_numbers:
         return add_separated_numbers(separated_numbers, "\n")
 
     return int(separated_numbers)
