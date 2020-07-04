@@ -48,6 +48,7 @@ def add(separated_numbers):
     separated_numbers = normalize_separator(separated_numbers, ",")
 
     numbers = separated_numbers.split("\n")
+    numbers = [int(x) for x in numbers]
     result = 0
     invalid_inputs = []
     for n in numbers:
