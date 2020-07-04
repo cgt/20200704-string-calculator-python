@@ -70,5 +70,6 @@ def add_separated_numbers(separated_numbers, separator):
     numbers = separated_numbers.split(separator)
     result = 0
     for n in numbers:
-        result += add(n)
+        m = add(n)
+        result += m
     return result
