@@ -34,7 +34,7 @@ def add(separated_numbers):
     return int(separated_numbers)
 
 
-def apple_sauce(separated_numbers, separator="\n"):
+def apple_sauce(separated_numbers, separator):
     numbers = separated_numbers.split(separator)
     result = 0
     for n in numbers:
