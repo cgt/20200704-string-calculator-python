@@ -66,12 +66,12 @@ def normalize_separator(separated_numbers, separator):
 def add_separated_numbers(separated_numbers, separator):
     numbers = separated_numbers.split(separator)
     result = 0
-    negative_numbers = []
+    invalid_inputs = []
     for n in numbers:
         m = int(n)
         if m < 0:
-            negative_numbers.append(n)
+            invalid_inputs.append(n)
         result += m
-    if len(negative_numbers) > 0:
-        raise Exception("error: negatives not allowed: {}".format(" ".join(negative_numbers)))
+    if len(invalid_inputs) > 0:
+        raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
     return result
