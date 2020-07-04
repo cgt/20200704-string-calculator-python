@@ -26,11 +26,8 @@ def add(separated_numbers):
     if separated_numbers == "":
         return 0
     if "," in separated_numbers:
-        numbers = separated_numbers.split(",")
-        result = 0
-        for n in numbers:
-            result += add(n)
-        return result
+        return apple_sauce(separated_numbers, ",")
+
     elif "\n" in separated_numbers:
         return apple_sauce(separated_numbers)
 
