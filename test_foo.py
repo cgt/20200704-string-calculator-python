@@ -50,7 +50,7 @@ def normalize_custom_separator(separated_numbers):
 
 
 def normalize_separator(separated_numbers, separator):
-    return separated_numbers.replace(separator, ",")
+    return separated_numbers.replace(separator, "\n")
 
 
 def add_separated_numbers(separated_numbers, separator):
