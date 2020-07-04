@@ -44,7 +44,8 @@ def add(separated_numbers):
 
     if separated_numbers == "-2":
         raise Exception
-    return int(separated_numbers)
+    n = int(separated_numbers)
+    return n
 
 
 def normalize_custom_separator(separated_numbers):
