@@ -26,15 +26,15 @@ def add(separated_numbers):
     if separated_numbers == "":
         return 0
     if "," in separated_numbers:
-        return apple_sauce(separated_numbers, ",")
+        return add_separated_numbers(separated_numbers, ",")
 
     elif "\n" in separated_numbers:
-        return apple_sauce(separated_numbers, "\n")
+        return add_separated_numbers(separated_numbers, "\n")
 
     return int(separated_numbers)
 
 
-def apple_sauce(separated_numbers, separator):
+def add_separated_numbers(separated_numbers, separator):
     numbers = separated_numbers.split(separator)
     result = 0
     for n in numbers:
