@@ -32,8 +32,9 @@ def test_add_rejects_negative_numbers():
     with pytest.raises(Exception) as ex:
         add("-2")
     assert "error: negatives not allowed: -2" in str(ex.value)
-    with pytest.raises(Exception):
+    with pytest.raises(Exception) as ex:
         add("6,-7")
+    assert "error: negatives not allowed: -7" in str(ex.value)
 
 
 def add(separated_numbers):
@@ -48,7 +49,7 @@ def add(separated_numbers):
 
     n = int(separated_numbers)
     if n < 0:
-        raise Exception("error: negatives not allowed: -2")
+        raise Exception("error: negatives not allowed: {}".format(n))
     return n
 
 
