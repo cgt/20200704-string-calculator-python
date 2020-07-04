@@ -50,13 +50,13 @@ def add(separated_numbers):
     numbers = separated_numbers.split("\n")
     numbers = [int(x) for x in numbers]
     result = 0
-    invalid_inputs = []
+    invalid_inputs = [str(x) for x in numbers if x < 0]
+    if len(invalid_inputs) > 0:
+        raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
     for n in numbers:
         if n < 0:
             invalid_inputs.append(str(n))
         result += n
-    if len(invalid_inputs) > 0:
-        raise Exception("error: negatives not allowed: {}".format(" ".join(invalid_inputs)))
     return result
 
 
