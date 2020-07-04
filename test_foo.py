@@ -47,11 +47,6 @@ def add(separated_numbers):
     if True:
         return add_separated_numbers(separated_numbers, "\n")
 
-    n = int(separated_numbers)
-    if n < 0:
-        raise Exception("error: negatives not allowed: {}".format(n))
-    return n
-
 
 def normalize_custom_separator(separated_numbers):
     parts = separated_numbers.split("\n", 1)
