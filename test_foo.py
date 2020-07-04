@@ -45,8 +45,12 @@ def normalize_custom_separator(separated_numbers):
     separated_numbers = parts[1]
     prefix = parts[0]
     separator = prefix[2]
-    separated_numbers = separated_numbers.replace(separator, ",")
+    separated_numbers = normalize_separator(separated_numbers, separator)
     return separated_numbers
+
+
+def normalize_separator(separated_numbers, separator):
+    return separated_numbers.replace(separator, ",")
 
 
 def add_separated_numbers(separated_numbers, separator):
