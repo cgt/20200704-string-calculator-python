@@ -17,7 +17,7 @@ def add(comma_separated_numbers):
     if comma_separated_numbers == "":
         return 0
     if "," in comma_separated_numbers:
-        x = comma_separated_numbers.split(",")
-        return add(x[0]) + add(x[1])
+        numbers = comma_separated_numbers.split(",")
+        return add(numbers[0]) + add(numbers[1])
 
     return int(comma_separated_numbers)
