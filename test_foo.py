@@ -52,10 +52,14 @@ def add(separated_numbers):
 
 
 def normalize(separated_numbers):
-    if separated_numbers.startswith("//"):
+    if has_custom_separator(separated_numbers):
         separated_numbers = normalize_custom_separator(separated_numbers)
     separated_numbers = normalize_separator(separated_numbers, ",")
     return separated_numbers
+
+
+def has_custom_separator(separated_numbers):
+    return separated_numbers.startswith("//")
 
 
 def validate_input(numbers):
