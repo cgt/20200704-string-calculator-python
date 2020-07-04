@@ -71,5 +71,7 @@ def add_separated_numbers(separated_numbers, separator):
     result = 0
     for n in numbers:
         m = add(n)
+        if m < 0:
+            raise Exception("error: negatives not allowed: {}".format(m))
         result += m
     return result
