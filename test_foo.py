@@ -70,7 +70,7 @@ def add_separated_numbers(separated_numbers, separator):
     numbers = separated_numbers.split(separator)
     result = 0
     for n in numbers:
-        m = add(n)
+        m = int(n)
         if m < 0:
             raise Exception("error: negatives not allowed: {}".format(m))
         result += m
